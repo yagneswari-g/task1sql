@@ -22,6 +22,27 @@ This project models the core data entities and relationships in a typical librar
 
 
 > The ER diagram illustrates the relationships between entities such as Books, Authors, Publishers, Members, and Loans using proper foreign key connections.
+Entities:
+
+Book: BookID (PK), Title, Genre, PublisherID (FK), YearPublished
+
+Author: AuthorID (PK), Name, Country
+
+BookAuthor: BookID (FK), AuthorID (FK) → Composite PK
+
+Publisher: PublisherID (PK), Name, Contact
+
+Member: MemberID (PK), Name, Email, JoinDate
+
+Loan: LoanID (PK), BookID (FK), MemberID (FK), IssueDate, ReturnDate
+
+Relationships:
+
+Book–Publisher: Many-to-One
+
+Book–Author: Many-to-Many (via BookAuthor)
+
+Book–Member (Loan): Many-to-Many
 
 ---
 
